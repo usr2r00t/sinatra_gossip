@@ -23,6 +23,7 @@ class Gossip
     return all_gossips
   end
   def self.find(id)
+	 ²
     gossips = []
     CSV.read("./db/gossip.csv").each_with_index do |csv_line, index|
       if (id == index + 1)
@@ -33,10 +34,10 @@ class Gossip
   end
   def self.update(id,author,content)
     gossips = []
-		CSV.read("./db/gossip.csv").each_with_index do |csv_line, index|
-			if (id == index + 1) 
-				gossips << [csv_line[0], csv_line[1]]
-			end
+	CSV.read("./db/gossip.csv").each_with_index do |csv_line, index|
+		if (id == index + 1) 
+		gossips << [csv_line[0], csv_line[1]]
+	end
       return gossips
 		end
 		CSV.open("./db/gossip.csv", "w") do |csv| 
